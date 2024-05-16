@@ -9,7 +9,7 @@
 
  
 ## 프로젝트 로고
-- <img src="https://github.com/Painterrr/Woorizip/blob/main/application_logo.png" width="200" height="200" />
+<img src="https://github.com/Painterrr/Woorizip/blob/main/application_logo.png" width="200" height="200" />
 <br><br>
  
 ## ⭐ 프로젝트 정보
@@ -42,26 +42,31 @@
 ![019](https://github.com/Painterrr/Woorizip/assets/98957340/a3746c0f-b361-4a66-a27c-c546f7c7395b)
  <br>
 - MSA
-- 내부 서버 간 gRPC 통신으로 "언어중립적 특성" 및 "멀티플렉싱(Multiplexing)" 확보
-- 이외 서버 간 통신은 https로 진행
-- 비즈니즈 유연성 확보
-- 서비스 안정성 확보
+  - 내부 서버 간 gRPC 통신으로 "언어중립적 특성" 및 "멀티플렉싱(Multiplexing)" 확보
+  - 이외 서버 간 통신은 https로 진행
+  - 비즈니즈 유연성 확보
+  - 서비스 안정성 확보
+- Woorizip condition
+  - Java: 17.0.10
+  - SpringBoot: 3.1.10
+  - Query DSL: 5.0.0
+  - gRPC Server Name: service-condition
 <br><br>
  
 ## 시스템 아키텍처
 ![021](https://github.com/Painterrr/Woorizip/assets/98957340/b69098e9-4d7a-472b-8c93-3742476a231f)
 <br>
 * CI/CD
- - Jenkins: 자동 CI로 이미지 빌드. 빌드된 이미지를 ECR에 전송. 해당 이미지의 API를 Argo에 전송.
- - ECR: 빌드된 이미지 리포지토리.
- - Argo: 자동 CD. ECR로부터 이미지를 전달받고 jenkins로부터 받은 API로 CD 확인 및 깃허브 소스와의 sync 및 health check 진행. CD 모니터링 가능.
+  - Jenkins: 자동 CI로 이미지 빌드. 빌드된 이미지를 ECR에 전송. 해당 이미지의 API를 Argo에 전송.
+  - ECR: 빌드된 이미지 리포지토리.
+  - Argo: 자동 CD. ECR로부터 이미지를 전달받고 jenkins로부터 받은 API로 CD 확인 및 깃허브 소스와의 sync 및 health check 진행. CD 모니터링 가능.
 * Security
- - ACM: SSL, TLS 인증서 발급 -> https 사용
- - WAF: SQL Injection 및 DDoc 방어
+  - ACM: SSL, TLS 인증서 발급 -> https 사용
+  - WAF: SQL Injection 및 DDoc 방어
 * 고가용성
- - Kubernetes: 클러스터를 구성하여 고가용성 확보.
- - ALB: 타겟그룹 간 로드밸런싱.
- - Karpenter: 클러스터 오토 스케일러. 기존 CAS에 비하여 구조가 간편하여 좀 더 빠르고 유연함. 노드 비용도 CAS에 비하여 절감 가능.
+  - Kubernetes: 클러스터를 구성하여 고가용성 확보.
+  - ALB: 타겟그룹 간 로드밸런싱.
+  - Karpenter: 클러스터 오토 스케일러. 기존 CAS에 비하여 구조가 간편하여 좀 더 빠르고 유연함. 노드 비용도 CAS에 비하여 절감 가능.
  <br><br>
 
 ## CI/CD Pipeline
