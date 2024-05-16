@@ -1,6 +1,6 @@
 # woorizip-condition
 
-------------------------
+<br><br>
 
 ## 프로젝트 이름
 #### 우리집Woorizip
@@ -45,7 +45,8 @@
 <br><br>
 
 #### 서비스 시연 화면
-![앱 시연 화면](https://github.com/Painterrr/Woorizip/assets/98957340/342fd6f7-f0f2-426e-9b55-ca2e4287d323)
+![앱 시연 화면](https://github.com/Painterrr/Woorizip/assets/98957340/7850496b-89b8-4ec2-ba86-310f99245711)
+
 
 ------------------------
 
