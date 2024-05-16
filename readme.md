@@ -76,7 +76,7 @@
   - Argo: 자동 CD. ECR로부터 이미지를 전달받고 jenkins로부터 받은 API로 CD 확인 및 깃허브 소스와의 sync 및 health check 진행. CD 모니터링 가능.
 * Security
   - ACM: SSL, TLS 인증서 발급 -> https 사용
-  - WAF: SQL Injection 및 DDoc 방어
+  - WAF: SQL Injection 및 DDos 방어
 * 고가용성
   - Kubernetes: 클러스터를 구성하여 고가용성 확보.
   - ALB: 타겟그룹 간 로드밸런싱.
