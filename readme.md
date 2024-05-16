@@ -38,6 +38,10 @@
 ![010](https://github.com/Painterrr/Woorizip/assets/98957340/4f96565c-b22e-4cbf-9c0e-056f82b803b3)
 <br><br>
 
+#### 서비스 시연 화면
+![앱 시연 화면](https://github.com/Painterrr/Woorizip/assets/98957340/342fd6f7-f0f2-426e-9b55-ca2e4287d323)
+
+
 ## 서비스 아키텍처
 ![019](https://github.com/Painterrr/Woorizip/assets/98957340/a3746c0f-b361-4a66-a27c-c546f7c7395b)
  <br>
