@@ -1,0 +1,117 @@
+syntax = "proto3";
+
+package conditionpb;
+
+option java_multiple_files = true;
+option java_package = "waf.fisa.grpc.condition";
+option java_outer_classname = "ConditionProto";
+
+import "google/protobuf/empty.proto";
+
+message Condition {
+  string id = 1;
+  string accountId = 2;
+  string location = 3;
+  string buildingType = 4;
+  int32 fee = 5;
+  string moveInDate = 6;
+  string hashtag = 7;
+}
+
+service ConditionService {
+  rpc IsRegistered(ConditionAccountIdReq) returns(ConditionIsRegisteredResp); // 등록된 조건 확인 (의뢰인)
+
+  rpc SaveCondition(ConditionReq) returns (ConditionResp); // Condition 등록 (의뢰인)
+
+  rpc ReadMyCondition(ConditionAccountIdReq) returns (ConditionResp); // My Condition 조회 (의뢰인)
+  rpc ReadAllCondition(google.protobuf.Empty) returns (ConditionRespList); // Condition 전체 조회 (공인중개사)
+  rpc ReadByWhereCondition(ConditionReadByWhereReq) returns (ConditionRespList); // Condition 조건부 조회 (공인중개사)
+
+  rpc updateCondition(ConditionReqWithId) returns (ConditionResp); // Condition 수정 (의뢰인)
+
+  rpc DeleteCondition(ConditionIdReq) returns (ConditionDeleteResp); // Condition 삭제 (의뢰인)
+}
+
+/*
+ * req: save, readByWhere
+ */
+message ConditionReq {
+  string accountId = 1;
+  string location = 2;
+  string buildingType = 3;
+  int32 fee = 4;
+  string moveInDate = 5;
+  string hashtag = 6;
+}
+
+/*
+ * req: readByWhere
+ */
+message ConditionReadByWhereReq {
+  string location = 1;
+  string buildingType = 2;
+  int32 fee = 3;
+  string moveInDate = 4;
+  string hashtag = 5;
+}
+
+/*
+ * req: update
+ */
+message ConditionReqWithId {
+  string id = 1;
+  string accountId = 2;
+  string location = 3;
+  string buildingType = 4;
+  int32 fee = 5;
+  string moveInDate = 6;
+  string hashtag = 7;
+}
+
+/*
+ * req: readMy, delete
+ */
+message ConditionIdReq {
+  string id = 1;
+}
+
+/*
+ * req: IsRegistered
+ */
+message ConditionAccountIdReq {
+  string accountId = 1;
+}
+
+/*
+ * resp: IsRegistered
+ */
+message ConditionIsRegisteredResp {
+  bool isRegistered = 1;
+}
+
+/*
+ * resp: save, readMyCondition, update
+ */
+message ConditionResp {
+  string id = 1;
+  string accountId = 2;
+  string location = 3;
+  string buildingType = 4;
+  int32 fee = 5;
+  string moveInDate = 6;
+  string hashtag = 7;
+}
+
+/*
+ * resp: readAll, readByWhere
+ */
+message ConditionRespList {
+  repeated Condition Conditions = 1;
+}
+
+/*
+ * resp: delete
+ */
+message ConditionDeleteResp {
+  string msg = 1;
+}

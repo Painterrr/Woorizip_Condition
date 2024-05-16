@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-condition
+spec:
+  selector:
+    matchLabels:
+      app: conditionapp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: conditionapp
+    spec:
+      containers:
+        - name: condition
+          image: 211125685751.dkr.ecr.ap-northeast-2.amazonaws.com/woorizip-condition:20240503091121
+          ports:
+            - containerPort: 9093
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-condition
+spec:
+  selector:
+    app: conditionapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9093
+  type: NodePort
