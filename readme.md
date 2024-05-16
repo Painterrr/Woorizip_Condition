@@ -9,7 +9,7 @@
 --------------------------------------
  
 ## 프로젝트 로고
-- ![우측 상단 아이콘gjj](https://github.com/Painterrr/Woorizip/assets/98957340/c5fe64bf-2ebe-4738-80da-fd98823539da)
+- <img src="https://github.com/Painterrr/Woorizip/blob/main/application_logo.png" width="200" height="200" />
 <br><br>
 --------------------------------------
  
