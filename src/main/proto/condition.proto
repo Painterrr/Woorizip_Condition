@@ -19,17 +19,17 @@ message Condition {
 }
 
 service ConditionService {
-  rpc IsRegistered(ConditionAccountIdReq) returns(ConditionIsRegisteredResp); // 등록된 조건 확인 (의뢰인)
+  rpc IsRegistered(stream ConditionAccountIdReq) returns(stream ConditionIsRegisteredResp); // 등록된 조건 확인 (의뢰인)
 
-  rpc SaveCondition(ConditionReq) returns (ConditionResp); // Condition 등록 (의뢰인)
+  rpc SaveCondition(stream ConditionReq) returns (stream ConditionResp); // Condition 등록 (의뢰인)
 
-  rpc ReadMyCondition(ConditionAccountIdReq) returns (ConditionResp); // My Condition 조회 (의뢰인)
-  rpc ReadAllCondition(google.protobuf.Empty) returns (ConditionRespList); // Condition 전체 조회 (공인중개사)
-  rpc ReadByWhereCondition(ConditionReadByWhereReq) returns (ConditionRespList); // Condition 조건부 조회 (공인중개사)
+  rpc ReadMyCondition(stream ConditionAccountIdReq) returns (stream ConditionResp); // My Condition 조회 (의뢰인)
+  rpc ReadAllCondition(google.protobuf.Empty) returns (stream ConditionRespList); // Condition 전체 조회 (공인중개사)
+  rpc ReadByWhereCondition(stream ConditionReadByWhereReq) returns (stream ConditionRespList); // Condition 조건부 조회 (공인중개사)
 
-  rpc updateCondition(ConditionReqWithId) returns (ConditionResp); // Condition 수정 (의뢰인)
+  rpc updateCondition(stream ConditionReqWithId) returns (stream ConditionResp); // Condition 수정 (의뢰인)
 
-  rpc DeleteCondition(ConditionIdReq) returns (ConditionDeleteResp); // Condition 삭제 (의뢰인)
+  rpc DeleteCondition(stream ConditionIdReq) returns (stream ConditionDeleteResp); // Condition 삭제 (의뢰인)
 }
 
 /*
